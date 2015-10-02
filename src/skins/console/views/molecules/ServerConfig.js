@@ -14,17 +14,21 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/*
- * THIS FILE IS AUTO-GENERATED
- * You can edit it you like, but your changes will be overwritten,
- * so you'd just be trying to swim upstream like a salmon.
- * You are not a salmon.
- */
+'use strict';
 
-var skin = {};
+var React = require('react');
+var Modal = require('matrix-react-sdk/lib/Modal');
+var sdk = require('matrix-react-sdk');
 
-skin['molecules.MTextTile'] = require('./views/molecules/MTextTile');
-skin['molecules.ServerConfig'] = require('./views/molecules/ServerConfig');
+var config = require('../../../../../config.json');
 
-module.exports = require('matrix-react-skin/lib/skins/base/skindex');var extend = require('matrix-react-sdk/lib/extend');
-extend(module.exports, skin);
+var ServerConfig = require("matrix-react-skin/lib/skins/base/views/molecules/ServerConfig");
+ServerConfig.defaultProps = {
+    onHsUrlChanged: function() {},
+    onIsUrlChanged: function() {},
+    defaultHsUrl: config.default_hs_url,
+    defaultIsUrl: config.default_is_url
+};
+
+module.exports = ServerConfig;
+
