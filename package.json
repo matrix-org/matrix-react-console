@@ -9,7 +9,7 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "reskindex": "reskindex console -h src/skins/base/header",
+    "reskindex": "reskindex console -h src/skins/console/header",
     "build:css": "catw node_modules/matrix-react-skin/bundle.css -o app/bundle-base.css --no-watch && catw 'src/skins/console/css/**/*.css' -o app/bundle.css -c uglifycss --no-watch",
     "build:compile": "babel --source-maps -d lib src",
     "build:bundle": "NODE_ENV=production webpack -p lib/app/index.js app/bundle.js",
